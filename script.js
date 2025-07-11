@@ -24,4 +24,23 @@ document.getElementById('jobForm').addEventListener('submit', function (e) {
       alert('Failed to post job. Try again.');
     });
 });
+const toggle = document.getElementById('themeToggle');
+
+// Apply saved theme
+if (localStorage.getItem('theme') === 'dark') {
+  document.documentElement.classList.add('dark');
+  toggle.checked = true;
+}
+
+// Toggle manually
+toggle.addEventListener('change', function () {
+  if (this.checked) {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  }
+});
+
 
