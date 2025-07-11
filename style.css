@@ -1,1 +1,149 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Light Theme Variables */
+:root {
+  --bg: #f5f7fa;
+  --text: #333;
+  --card: #fff;
+  --accent: #007bff;
+  --accent-hover: #0056b3;
+  --button: #28a745;
+  --button-hover: #218838;
+  --input-border: #ccc;
+}
+
+/* Dark Theme Override (auto-switch based on user system) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #f1f1f1;
+    --card: #1e1e1e;
+    --accent: #3399ff;
+    --accent-hover: #1976d2;
+    --button: #2ecc71;
+    --button-hover: #27ae60;
+    --input-border: #444;
+  }
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 2rem;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.view-jobs-btn {
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.view-jobs-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Form Container */
+.job-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: grid;
+  gap: 1.2rem;
+}
+
+/* Section Headings */
+.job-form h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+/* Input & Textarea Styling */
+.job-form input,
+.job-form select,
+.job-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text);
+  transition: border-color 0.3s ease;
+}
+
+.job-form input:focus,
+.job-form select:focus,
+.job-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit Button */
+.job-form button {
+  background-color: var(--button);
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.job-form button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .job-form {
+    padding: 1.5rem;
+  }
+
+  .job-form h2 {
+    font-size: 1rem;
+  }
+}
