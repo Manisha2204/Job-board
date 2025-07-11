@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post a Job - SmartHire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Post a Job</h1>
+    <a href="jobs.html" class="view-jobs-btn">View Posted Jobs</a>
+  </header>
+
+  <form id="jobForm" class="job-form">
+    <h2>Job Information</h2>
+    <input type="text" name="job_title" placeholder="Job Title" required />
+    <textarea name="job_summary" placeholder="Job Summary" required></textarea>
+
+    <h2>Company Information</h2>
+    <input type="text" name="company_name" placeholder="Company Name" required />
+    <textarea name="company_info" placeholder="Brief About the Company" required></textarea>
+
+    <h2>Job Details</h2>
+    <textarea name="responsibilities" placeholder="Key Responsibilities" required></textarea>
+    <textarea name="skills_qualifications" placeholder="Required Skills & Qualifications" required></textarea>
+    <input type="text" name="experience" placeholder="Work Experience (e.g., 2-4 years)" required />
+    
+    <select name="employment_type" required>
+      <option value="">Select Employment Type</option>
+      <option value="Full-Time">Full-Time</option>
+      <option value="Part-Time">Part-Time</option>
+      <option value="Contract">Contract</option>
+      <option value="Internship">Internship</option>
+    </select>
+
+    <input type="text" name="location" placeholder="Job Location" required />
+    <input type="text" name="salary_range" placeholder="Salary Range (e.g., ₹5L - ₹7L PA)" required />
+    <textarea name="benefits" placeholder="Benefits and Perks (optional)"></textarea>
+
+    <button type="submit">Submit Job</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
