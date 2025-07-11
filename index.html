@@ -7,10 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Post a Job</h1>
+ <header>
+  <h1>Post a Job</h1>
+  <div style="display: flex; align-items: center; gap: 1rem;">
     <a href="jobs.html" class="view-jobs-btn">View Posted Jobs</a>
-  </header>
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+</header>
+
 
   <form id="jobForm" class="job-form">
     <h2>Job Information</h2>
@@ -38,7 +45,7 @@
     <input type="text" name="salary_range" placeholder="Salary Range (e.g., ₹5L - ₹7L PA)" required />
     <textarea name="benefits" placeholder="Benefits and Perks (optional)"></textarea>
 
-    <button type="submit">Submit Job</button>
+    <button type="submit">Post Job</button>
   </form>
 
   <script src="script.js"></script>
