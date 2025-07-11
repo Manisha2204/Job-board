@@ -1,3 +1,4 @@
+// Handle form submission
 document.getElementById('jobForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -16,23 +17,23 @@ document.getElementById('jobForm').addEventListener('submit', function (e) {
   })
     .then(response => response.text())
     .then(data => {
-      alert('Job posted successfully!');
+      alert('✅ Job posted successfully!');
       document.getElementById('jobForm').reset();
     })
     .catch(error => {
       console.error('Error!', error.message);
-      alert('Failed to post job. Try again.');
+      alert('❌ Failed to post job. Please try again.');
     });
 });
+
+// Handle dark mode toggle
 const toggle = document.getElementById('themeToggle');
 
-// Apply saved theme
 if (localStorage.getItem('theme') === 'dark') {
   document.documentElement.classList.add('dark');
   toggle.checked = true;
 }
 
-// Toggle manually
 toggle.addEventListener('change', function () {
   if (this.checked) {
     document.documentElement.classList.add('dark');
@@ -42,5 +43,3 @@ toggle.addEventListener('change', function () {
     localStorage.setItem('theme', 'light');
   }
 });
-
-
